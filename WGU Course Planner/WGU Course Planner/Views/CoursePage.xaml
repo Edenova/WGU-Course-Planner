@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WGU_Course_Planner.CoursePage">
+    <NavigationPage.TitleView>
+        <StackLayout Spacing="0">
+            <Label x:Name="navTitle" HorizontalOptions="Center" TextColor="White"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <TableView>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Status: "/>
+                                <Label x:Name="courseStatus"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Start date: "/>
+                                <Label x:Name="startDate"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="End date: "/>
+                                <Label x:Name="endDate"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Instructor name: "/>
+                                <Label x:Name="instructorName"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Instructor phone: "/>
+                                <Label x:Name="instructorPhone"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Instructor email"/>
+                                <Label x:Name="instructorEmail"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Notification enabled: "/>
+                                <Label x:Name="notification"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <Label Text="Notes: " VerticalOptions="Center"/>
+                                <Label x:Name="notes" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                                <Button Text="Share" x:Name="shareButton" HorizontalOptions="End" Clicked="ShareNotesButton_Clicked"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableView>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Assessments"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="AssessmentsButton_Clicked"/>
+                <Button Text="Edit"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="EditCourseButton_Clicked"/>
+                <Button Text="Delete Term"
+                    Style="{StaticResource deleteButton}"
+                    Clicked="DeleteCourseButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

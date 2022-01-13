@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WGU_Course_Planner.AssessmentListPage">
+    <NavigationPage.TitleView>
+        <StackLayout Spacing="0">
+            <Label x:Name="courseName" HorizontalOptions="Center" TextColor="White" FontSize="18"/>
+            <Label Text="Assessments" HorizontalOptions="Center" TextColor="White" FontSize="10"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name = "AssessmentListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Type}" HorizontalOptions="Center" TextColor="Black"/>
+                                <Label Text="{Binding Title}" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Add Assessment" x:Name="addAssessmentButton"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Fill"
+                Clicked="AddButton_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

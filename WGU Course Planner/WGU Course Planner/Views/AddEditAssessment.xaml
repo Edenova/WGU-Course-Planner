@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WGU_Course_Planner.AddEditAssessment">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label x:Name="pageTitle" Text="Course" Style="{StaticResource modalTitle}" />
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <TableView HasUnevenRows="True">
+                    <TableSection>
+                        <EntryCell Label="Title: " x:Name="assessmentTitle"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="Start date: " VerticalOptions="Center"/>
+                                <DatePicker x:Name="startDate"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="End date: " VerticalOptions="Center"/>
+                                <DatePicker x:Name="endDate"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="Status: " VerticalOptions="Center"/>
+                                <Picker x:Name="assessmentType" Title="Select type">
+                                    <Picker.Items>
+                                        <x:String>Objective</x:String>
+                                        <x:String>Performance</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <SwitchCell Text="Enable notification: " x:Name="enableNotification"/>
+                    </TableSection>
+                </TableView>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Save"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="SaveButton_Clicked"/>
+                <Button Text="Cancel"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="CancelButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

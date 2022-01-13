@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WGU_Course_Planner.TermPage">
+    <NavigationPage.TitleView>
+        <StackLayout Spacing="0">
+            <Label x:Name="navTitle" HorizontalOptions="Center" TextColor="White" FontSize="18"/>
+            <Label x:Name="DateRange" HorizontalOptions="Center" TextColor="White" FontSize="10"/>
+        </StackLayout>
+    </NavigationPage.TitleView>    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <ListView x:Name = "CourseListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="True">
+                                <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="WhiteSmoke">
+                                    <Label Text="{Binding CourseName}" HorizontalOptions="Center" TextColor="Black" FontSize="18"/>
+                                    <Label Text="{Binding Status}" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Add Course" x:Name="addCourseButton"
+                    Style="{StaticResource regularButton}"
+                    Clicked="AddCourseButton_Clicked"/>
+                <Button Text="Edit Term"
+                    Style="{StaticResource regularButton}"
+                    Clicked="EditTermButton_Clicked"/>
+                <Button Text="Delete Term"
+                    Style="{StaticResource deleteButton}"
+                    Clicked="DeleteTermButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

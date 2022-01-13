@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WGU_Course_Planner.AddEditTerm">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label x:Name="pageTitle" Text="Term" Style="{StaticResource modalTitle}" />
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="Title" />
+                <Entry  x:Name="Title"/>
+                <Label Text="Start Date" />
+                <DatePicker x:Name="Start"/>
+                <Label Text="End Date" />
+                <DatePicker x:Name="End"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Save"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="SaveButton_Clicked"/>
+                <Button Text="Cancel"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="CancelButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WGU_Course_Planner.MainPage">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="WGU Course Planner" Style="{StaticResource pageTitle}" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout>
+        <ListView x:Name = "termListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="True">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label Text="{Binding Title}" VerticalOptions="CenterAndExpand" TextColor="Blue"/>
+                            <Label Text="{Binding Start, StringFormat='{}{0:MM/dd/yyyy}'}" VerticalOptions="Center"/>
+                            <Label Text="To" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Text="{Binding End, StringFormat='{}{0:MM/dd/yyyy}'}" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        
+
+        <Button Text="Add Term"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Fill"
+                Clicked="AddButton_Clicked"/>
+
+    </StackLayout>
+
+</ContentPage>
